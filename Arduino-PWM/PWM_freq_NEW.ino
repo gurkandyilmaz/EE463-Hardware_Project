@@ -1,6 +1,6 @@
 
 float D=0; //value read by analogRead(), from pot, 0 and 1023
-float duty=0; // Duty cycle written to the PWM_pin,0 to 1.
+float duty=0; // Duty cycle written to the PWM_pin.
 
 
 int pot = A0;   // analog input to arduino from middle leg of the potentiometer to A0.
@@ -24,7 +24,8 @@ void setup() {
   Serial.begin(9600); 
   pinMode(pwm_pin,OUTPUT);
   pinMode(pot,INPUT);
-  // Pwm frequency change
+  digitalWrite(pwm_pin,LOW);
+   // Pwm frequency change
   setPwmFrequency(pwm_pin, divider); //Divides a given PWM pin frequency by a divisor.
 }
 
